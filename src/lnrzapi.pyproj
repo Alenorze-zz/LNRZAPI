@@ -36,13 +36,24 @@
     <Compile Include="lnrzapi\settings.py" />
     <Compile Include="lnrzapi\urls.py" />
     <Compile Include="lnrzapi\wsgi.py" />
+    <Compile Include="updates\admin.py" />
+    <Compile Include="updates\apps.py" />
+    <Compile Include="updates\migrations\__init__.py" />
+    <Compile Include="updates\models.py" />
+    <Compile Include="updates\tests.py" />
+    <Compile Include="updates\views.py" />
+    <Compile Include="updates\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="lnrzapi\" />
+    <Folder Include="updates\" />
+    <Folder Include="updates\migrations\" />
+    <Folder Include="updates\templates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
+    <Content Include="updates\templates\index.html" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.html">
