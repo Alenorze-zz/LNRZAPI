@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'rest_framework',
     #Apps
     'updates',
+    'status',
 ]
 
 MIDDLEWARE_CLASSES = [
