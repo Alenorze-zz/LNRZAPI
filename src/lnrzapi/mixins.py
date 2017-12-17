@@ -17,4 +17,3 @@ class JsonResponseMixin(object):
 
     def get_data(self, context):
         return context
-    

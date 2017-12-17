@@ -55,7 +55,6 @@
     <Folder Include="lnrzapi\" />
     <Folder Include="status\" />
     <Folder Include="status\migrations\" />
-    <Folder Include="status\templates\" />
     <Folder Include="updates\" />
     <Folder Include="updates\migrations\" />
     <Folder Include="updates\templates\" />
@@ -63,7 +62,6 @@
   <ItemGroup>
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
-    <Content Include="status\templates\index.html" />
     <Content Include="updates\templates\index.html" />
   </ItemGroup>
   <ItemGroup>

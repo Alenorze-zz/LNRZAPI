@@ -1,13 +1,18 @@
 import json
-
 from django.views.generic import View
 from django.http import HttpResponse
 
+
+
 from lnrzapi.mixins import HttpResponseMixin
+
+
 from updates.forms import UpdateModelForm
 from updates.models import Update as UpdateModel
+
 from .mixins import CSRFExemptMixin
 from .utils import is_json
+
 
 
 
@@ -97,7 +102,7 @@ class UpdateModelListAPIView(HttpResponseMixin, CSRFExemptMixin, View):
     '''
     is_json = True
     queryset = None
-
+    
 
     def get_queryset(self):
         qs = UpdateModel.objects.all()
@@ -213,8 +218,4 @@ class UpdateModelListAPIView(HttpResponseMixin, CSRFExemptMixin, View):
 
 
 
-
-
-
-
-
+   
