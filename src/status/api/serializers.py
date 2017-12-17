@@ -25,3 +25,4 @@ class StatusSerializer(serializers.ModelSerializer):
         if content is None and image is None:
             raise serializers.ValidationError("Content or image is required.")
         return data
+    
