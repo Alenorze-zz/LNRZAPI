@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from .views import StatusAPIView, StatusAPIDetailView,
+from .views import StatusAPIView, StatusAPIDetailView
 
 
 urlpatterns = [
