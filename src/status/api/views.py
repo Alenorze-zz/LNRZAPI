@@ -22,7 +22,7 @@ class StatusListSearchAPIView(APIView):
         return Response(serializer.data)
 
 
-class StatusAPiView(generics.ListAPIView):
+class StatusAPIView(generics.ListAPIView):
     permission_classes     = []
     authentication_classes = []
     serializer_class       = StatusSerializer
@@ -33,3 +33,10 @@ class StatusAPiView(generics.ListAPIView):
         if query is not None:
             qs = qs.filter(content__icontains=query)
         return qs
+
+
+class StatusCreateAPIView(generics.CreateAPIView):
+    permission_classes     = []
+    authentication_classes = []
+    queryset               = Status.objects.all()
+    serializer_class       = StatusSerializer
