@@ -1,4 +1,4 @@
-from rest_framework import generics
+from rest_framework import generics, mixins
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
@@ -22,7 +22,7 @@ class StatusListSearchAPIView(APIView):
         return Response(serializer.data)
 
 
-class StatusAPIView(generics.ListAPIView):
+class StatusAPIView(generics.ListAPIView, mixins.CreateModelMixin):
     permission_classes     = []
     authentication_classes = []
     serializer_class       = StatusSerializer
@@ -33,32 +33,33 @@ class StatusAPIView(generics.ListAPIView):
         if query is not None:
             qs = qs.filter(content__icontains=query)
         return qs
-
-
-class StatusCreateAPIView(generics.CreateAPIView):
-    permission_classes     = []
-    authentication_classes = []
-    queryset               = Status.objects.all()
-    serializer_class       = StatusSerializer
-
-
-class StatusDetailAPIView(generics.RetrieveAPIView):
-    permission_classes     = []
-    authentication_classes = []
-    queryset               = Status.objects.all()
-    serializer_class       = StatusSerializer
-
-
-class StatusUpdateAPIView(generics.RetrieveAPIView):
-    permission_classes     = []
-    authentication_classes = []
-    queryset               = Status.objects.all()
-    serializer_class       = StatusSerializer
-
-
-class StatusDeleteAPIView(generics.RetrieveAPIView):
-    permission_classes     = []
-    authentication_classes = []
-    queryset               = Status.objects.all()
-    serializer_class       = StatusSerializer
     
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
+
+
+class StatusDetailAPIView(generics.RetrieveAPIView, mixins.DestroyModelMixin, mixins.UpdateModelMixin):
+    permission_classes     = []
+    authentication_classes = []
+    queryset               = Status.objects.all()
+    serializer_class       = StatusSerializer
+
+    def put(self, request, *args, **kwargs):
+        return self.update(request, *args, **kwargs)
+
+    def delete(self, request, *args, **kwargs):
+        return self.destroy(request, *args, **kwargs)
+
+
+# class StatusUpdateAPIView(generics.RetrieveAPIView):
+#     permission_classes     = []
+#     authentication_classes = []
+#     queryset               = Status.objects.all()
+#     serializer_class       = StatusSerializer
+
+
+# class StatusDeleteAPIView(generics.RetrieveAPIView):
+#     permission_classes     = []
+#     authentication_classes = []
+#     queryset               = Status.objects.all()
+#     serializer_class       = StatusSerializer
