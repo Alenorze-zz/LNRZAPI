@@ -26,7 +26,7 @@ class Status(models.Model):
     objects = StatusManager()
 
     def __str__(self):
-        return srt(self.content)[:50]
+        return str(self.content)[:50]
 
     class Meta:
         verbose_name = 'Status post'
