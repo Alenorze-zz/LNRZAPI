@@ -40,3 +40,10 @@ class StatusCreateAPIView(generics.CreateAPIView):
     authentication_classes = []
     queryset               = Status.objects.all()
     serializer_class       = StatusSerializer
+
+
+class StatusDetailAPIView(generics.RetrieveAPIView):
+    permission_classes     = []
+    authentication_classes = []
+    queryset               = Status.objects.all()
+    serializer_class       = StatusSerializer
