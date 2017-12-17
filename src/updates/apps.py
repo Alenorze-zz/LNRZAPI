@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class updatesConfig(AppConfig):
+class UpdatesConfig(AppConfig):
     name = 'updates'
