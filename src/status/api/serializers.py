@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from status.models import Status
+from accounts.api.serializers import UserPublicSerializer
 
 
 class CustomSerializer(serializers.ModelSerializer):
@@ -9,6 +10,8 @@ class CustomSerializer(serializers.ModelSerializer):
     
 
 class StatusSerializer(serializers.ModelSerializer):
+    uri  = serializers.SerializerMethodField(read_only=True)
+    user = UserPublicSerializer(read_only=True)
     class Meta: 
         model = Status
         fields = [
@@ -27,4 +30,7 @@ class StatusSerializer(serializers.ModelSerializer):
         if content is None and image is None:
             raise serializers.ValidationError("Content or image is required.")
         return data
+
+    def get_uri(self, obj):
+        return "/api/users/{id}/".format(id=obj.id)
     

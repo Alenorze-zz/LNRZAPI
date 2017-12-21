@@ -15,6 +15,20 @@ User = get_user_model()
 
 
 
+class UserPublicSerializer(serializers.ModelSerializer):
+    uri = serializers.SerializerMethodField(read_only=True)
+    class Meta: 
+        model = User
+        fields = [
+            'id', 
+            'username',
+            'uri'
+        ]
+    
+    def get_uri(self, obj):
+        return "/api/users/{id}/".format(id=obj.id)
+
+
 class UserRegisterSerializer(serializers.ModelSerializer):
     password2 = serializers.CharField(style={'input': 'password'}, write_only=True)
     token     = serializers.SerializerMethodField(read_only=True)
