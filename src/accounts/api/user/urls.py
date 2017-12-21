@@ -3,6 +3,8 @@ from django.contrib import admin
 
 from .views import UserDetailAPIView, UserStatusAPIView
 
+app_name = "userapi"
+
 
 urlpatterns = [
     url(r'^(?P<username>\w+)/$', UserDetailAPIView.as_view(), name='detail'),

@@ -40,4 +40,4 @@ class UserDetailSerializer(serializers.ModelSerializer):
             'last': StatusInlineUserSerializer(qs.first()).data,
             'recent': StatusInlineUserSerializer(qs[:limit], many=True).data
             }
-            return data
+        return data
