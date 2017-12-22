@@ -3,7 +3,7 @@ from django.contrib import admin
 
 from .views import UserDetailAPIView, UserStatusAPIView
 
-app_name = "userapi"
+app_name = "UserAPI"
 
 
 urlpatterns = [
