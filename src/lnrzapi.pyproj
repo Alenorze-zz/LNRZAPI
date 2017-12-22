@@ -43,6 +43,13 @@
     <Compile Include="lnrzapi\settings.py" />
     <Compile Include="lnrzapi\urls.py" />
     <Compile Include="lnrzapi\wsgi.py" />
+    <Compile Include="postings\admin.py" />
+    <Compile Include="postings\apps.py" />
+    <Compile Include="postings\migrations\__init__.py" />
+    <Compile Include="postings\models.py" />
+    <Compile Include="postings\tests.py" />
+    <Compile Include="postings\views.py" />
+    <Compile Include="postings\__init__.py" />
     <Compile Include="status\admin.py" />
     <Compile Include="status\apps.py" />
     <Compile Include="status\migrations\__init__.py" />
@@ -63,6 +70,9 @@
     <Folder Include="accounts\migrations\" />
     <Folder Include="accounts\templates\" />
     <Folder Include="lnrzapi\" />
+    <Folder Include="postings\" />
+    <Folder Include="postings\migrations\" />
+    <Folder Include="postings\templates\" />
     <Folder Include="status\" />
     <Folder Include="status\migrations\" />
     <Folder Include="updates\" />
@@ -71,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="accounts\templates\index.html" />
+    <Content Include="postings\templates\index.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="updates\templates\index.html" />

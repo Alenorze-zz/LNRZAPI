@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'accounts',
     'status',
     'updates',
+    'postings'
 ]
 
 
